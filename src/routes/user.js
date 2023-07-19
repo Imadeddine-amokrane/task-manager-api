@@ -43,6 +43,7 @@ router.post('/users/login', async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 });
+
 router.post('/users/logout', auth, async (req, res) => {
   try {
     req.user.tokens = req.user.tokens.filter(
